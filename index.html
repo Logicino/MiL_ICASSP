@@ -1,6 +1,232 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIL_ICASSP Audio Demo</title>
+<style>
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+body{
+    background-color: #f4f7fa;
+    padding: 40px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+h1{
+    font-size: 26px;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.legend{
+    font-size: 14px;
+    color: #4b5563;
+    text-align: center;
+    margin-bottom: 36px;
+}
+.sample-block{
+    background:#ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    border: 1px solid #eef2f7;
+    transition: all 0.2s ease;
+}
+.sample-block:hover{
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+.sample-title{
+    font-size: 18px;
+    font-weight: 600;
+    color:#1f2937;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.sample-title::before{
+    content: "";
+    width: 5px;
+    height: 18px;
+    background-color: #3b82f6;
+    border-radius: 3px;
+    margin-right: 12px;
+}
+.audio-row{
+    margin-bottom:18px;
+}
+.audio-row:last-child{
+    margin-bottom:0;
+}
+.row-title{
+    font-size:15px;
+    font-weight:500;
+    color:#374151;
+    margin-bottom:10px;
+}
+.audio-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:16px;
+}
+.audio-item{
+    background:#f8fafc;
+    padding:16px 12px;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
+    transition: background 0.2s ease;
+}
+.audio-item:hover{
+    background:#eff6ff;
+}
+.audio-item label{
+    display:block;
+    font-size:14px;
+    font-weight:500;
+    margin-bottom: 8px;
+    color:#1f2937;
+    text-align:center;
+}
+audio{
+    width:100%;
+    height:34px;
+}
+@media(max-width:640px){
+    body{padding:20px 12px;}
+    .audio-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
 <body>
-<h1>Hello GitHub Pages!</h1>
+<h1>MIL_ICASSP Audio Comparison Demo</h1>
+<p class="legend">Mixture | GT: Ground Truth | SCNet: Supervised Separation | Ours Recon: Self-supervised Reconstruction</p>
+
+<!-- Sample: swan -->
+<div class="sample-block">
+    <div class="sample-title">Sample: swan</div>
+
+    <!-- Row 1: Mixture，占两格中的一格 -->
+    <div class="audio-row">
+        <div class="row-title">Mixture</div>
+        <div class="audio-grid">
+            <div class="audio-item">
+                <label>Mixture</label>
+                <audio controls preload="none" src="audio/swan-mixture-gt.mp3">
+            </div>
+            <div></div> <!-- empty placeholder to keep grid layout -->
+        </div>
+    </div>
+
+    <!-- Row 2: Ground Truth -->
+    <div class="audio-row">
+        <div class="row-title">Ground Truth</div>
+        <div class="audio-grid">
+            <div class="audio-item">
+                <label>Piano GT</label>
+                <audio controls preload="none" src="audio/swan-piano-gt.mp3">
+            </div>
+            <div class="audio-item">
+                <label>Violin GT</label>
+                <audio controls preload="none" src="audio/swan-vl-gt.mp3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Row3: SCNet -->
+    <div class="audio-row">
+        <div class="row-title">SCNet (Supervised Separation)</div>
+        <div class="audio-grid">
+            <div class="audio-item">
+                <label>SCNet Piano</label>
+                <audio controls preload="none" src="audio/swan-sep-piano.mp3">
+            </div>
+            <div class="audio-item">
+                <label>SCNet Violin</label>
+                <audio controls preload="none" src="audio/swan-sep-violin.mp3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Row4: Ours -->
+    <div class="audio-row">
+        <div class="row-title">Ours (Self-supervised Reconstruction)</div>
+        <div class="audio-grid">
+            <div class="audio-item">
+                <label>Ours Recon Piano</label>
+                <audio controls preload="none" src="audio/swan-piano-recon.mp3">
+            </div>
+            <div class="audio-item">
+                <label>Ours Recon Violin</label>
+                <audio controls preload="none" src="audio/swan_violin-recon.mp3">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Template for adding more samples
+<div class="sample-block">
+    <div class="sample-title">Sample: XXX</div>
+
+    <div class="audio-row">
+        <div class="row-title">Mixture</div>
+        <div class="audio-grid">
+            <div class="audio-item">
+                <label>Mixture</label>
+                <audio controls preload="none" src="audio/xxx-mixture-gt.mp3">
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="audio-row">
+        <div class="row-title">Ground Truth</div>
+        <div class="audio-grid">
+            <div class="audio-item">
+                <label>Piano GT</label>
+                <audio controls preload="none" src="audio/xxx-piano-gt.mp3">
+            </div>
+            <div class="audio-item">
+                <label>Violin GT</label>
+                <audio controls preload="none" src="audio/xxx-vl-gt.mp3">
+            </div>
+        </div>
+    </div>
+
+    <div class="audio-row">
+        <div class="row-title">SCNet (Supervised Separation)</div>
+        <div class="audio-grid">
+            <div class="audio-item">
+                <label>SCNet Piano</label>
+                <audio controls preload="none" src="audio/xxx-sep-piano.mp3">
+            </div>
+            <div class="audio-item">
+                <label>SCNet Violin</label>
+                <audio controls preload="none" src="audio/xxx-sep-violin.mp3">
+            </div>
+        </div>
+    </div>
+
+    <div class="audio-row">
+        <div class="row-title">Ours (Self-supervised Reconstruction)</div>
+        <div class="audio-grid">
+            <div class="audio-item">
+                <label>Ours Recon Piano</label>
+                <audio controls preload="none" src="audio/xxx-piano-recon.mp3">
+            </div>
+            <div class="audio-item">
+                <label>Ours Recon Violin</label>
+                <audio controls preload="none" src="audio/xxx_violin-recon.mp3">
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
 </body>
 </html>
