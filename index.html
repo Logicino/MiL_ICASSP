@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MIDI in the Loop - Audio Demo</title>
+<title>MIL_ICASSP Audio Demo</title>
 <style>
 *{
     box-sizing: border-box;
@@ -17,12 +17,51 @@ body{
     max-width: 1000px;
     margin: 0 auto;
 }
+.paper-header{
+    background:#ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    border: 1px solid #eef2f7;
+}
+.paper-figure{
+    width:100%;
+    border-radius:12px;
+    margin-top:24px;
+}
 h1{
-    font-size: 26px;
+    font-size: 24px;
     color: #111827;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     text-align: center;
+    line-height:1.4;
+}
+.authors{
+    font-size:15px;
+    color:#374151;
+    text-align:center;
+    margin-bottom:12px;
+}
+.affiliations{
+    font-size:14px;
+    color:#4b5563;
+    text-align:center;
+    margin-bottom:24px;
+    line-height:1.5;
+}
+.abstract-title{
+    font-size:17px;
+    font-weight:600;
+    margin-bottom:10px;
+    color:#1f2937;
+}
+.abstract-text{
+    font-size:14px;
+    color:#374151;
+    line-height:1.6;
+    text-align:justify;
 }
 .legend{
     font-size: 14px;
@@ -35,12 +74,12 @@ h1{
     border-radius: 16px;
     padding: 24px;
     margin-bottom: 24px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 14px rgba(0,0,0.05);
     border: 1px solid #eef2f7;
     transition: all 0.2s ease;
 }
 .sample-block:hover{
-    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    box-shadow: 0 6px 20px rgba(0,0,0.07);
 }
 .sample-title{
     font-size: 18px;
@@ -106,12 +145,28 @@ audio{
 @media(max-width:640px){
     body{padding:20px 12px;}
     .audio-grid{grid-template-columns:1fr;}
+    h1{font-size:20px;}
 }
 </style>
 </head>
 <body>
-<h1>MIL_ICASSP Audio Comparison Demo</h1>
-<p class="legend">Mixture | GT: Ground Truth | SCNet: Supervised Separation | Ours Recon: Self-supervised Reconstruction</p>
+
+<div class="paper-header">
+    <h1>MIDI-IN-THE-LOOP (MIL): AN ITERATIVE SELF-SUPERVISED ANALYSIS-BY-SYNTHESIS PIANO-VIOLIN SEPARATION METHOD USING VIRTUAL INSTRUMENTS</h1>
+    <div class="authors">Yuetonghui Xu¹, Zhixin Yuan², Lanjia Ning³, Xihong Wu², Xiaobing Li³, Feng Yu³, Yue Qin¹</div>
+    <div class="affiliations">
+        ¹Nanjing University of Arts, School of Contemporary Music and Technology, Jiangsu, China<br>
+        ²Peking University, School of Intelligence Science and Technology, Beijing, China<br>
+        ³Central Conservatory of Music, Department of Music AI & IT, Beijing, China
+    </div>
+    <div class="abstract-title">ABSTRACT</div>
+    <p class="abstract-text">
+Most existing source separation methods rely on end-to-end supervised training. Such schemes lack intermediate representations, limiting downstream applications. Besides, direct waveform-domain predictions may introduce artifacts and require labor-intensive stem annotations. To overcome these, we propose MIDI-in-the-Loop (MiL), a self-supervised MSS method for piano-violin scenarios based on an analysis-by-synthesis framework. Specifically, the analysis stage transcribes the mixture into instrument-specific MIDI sequences, while the synthesis stage renders each MIDI sequence into its corresponding audio source using a virtual instrument. Since virtual instruments are non-differentiable during training process, we further propose a training method utilizing iterative sampling-and-training procedure. To evaluate MiL, we construct a piano-violin dataset and conduct experiments. Results show that MiL achieves performance comparable to supervised benchmarks on certain metrics while substantially outperforming unsupervised matrix-factorization baselines.
+    </p>
+    <!-- 图片放在摘要下方 -->
+    <img class="paper-figure" src="pics/paradigm.png" alt="System Paradigm">
+</div>
+
 
 <!-- Sample: swan -->
 <div class="sample-block">
