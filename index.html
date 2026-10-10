@@ -161,7 +161,7 @@ Most existing source separation methods rely on end-to-end supervised training. 
     <img class="paper-figure" src="pics/paradigm.png" alt="System Paradigm">
 </div>
 
-<!-- Sample: swan -->
+<!-- ========== Sample 1: swan ========== -->
 <div class="sample-block">
     <div class="sample-title">Sample: swan</div>
 
@@ -171,9 +171,9 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Mixture</label>
-                <audio controls preload="none" src="audio/swan-mixture-gt.mp3">
+                <audio controls preload="none" src="audio/swan/swan-mixture-gt.mp3">
             </div>
-            <div></div> <!-- empty placeholder to keep grid layout -->
+            <div></div>
         </div>
     </div>
 
@@ -183,27 +183,27 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Piano GT</label>
-                <audio controls preload="none" src="audio/swan-piano-gt.mp3">
+                <audio controls preload="none" src="audio/swan/swan-piano-gt.mp3">
             </div>
             <div class="audio-item">
                 <label>Violin GT</label>
-                <audio controls preload="none" src="audio/swan-violin-gt.mp3">
+                <audio controls preload="none" src="audio/swan/swan-violin-gt.mp3">
             </div>
         </div>
     </div>
 
-    <!-- Row3: NMF (Unsupervised Matrix Factorization Baseline) -->
+    <!-- Row3: NMF -->
     <div class="audio-row">
         <div class="row-title">NMF (Unsupervised Matrix Factorization Baseline)</div>
         <p class="row-note">Classic unsupervised source separation baseline based on non-negative matrix factorization.</p>
         <div class="audio-grid">
             <div class="audio-item">
                 <label>NMF Piano</label>
-                <audio controls preload="none" src="audio/swan-piano-nmf.mp3">
+                <audio controls preload="none" src="audio/swan/swan-piano-nmf.mp3">
             </div>
             <div class="audio-item">
                 <label>NMF Violin</label>
-                <audio controls preload="none" src="audio/swan-violin-nmf.mp3">
+                <audio controls preload="none" src="audio/swan/swan-violin-nmf.mp3">
             </div>
         </div>
     </div>
@@ -215,11 +215,11 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>SCNet Piano</label>
-                <audio controls preload="none" src="audio/swan-piano-sep.mp3">
+                <audio controls preload="none" src="audio/swan/swan-piano-sep.mp3">
             </div>
             <div class="audio-item">
                 <label>SCNet Violin</label>
-                <audio controls preload="none" src="audio/swan-violin-sep.mp3">
+                <audio controls preload="none" src="audio/swan/swan-violin-sep.mp3">
             </div>
         </div>
     </div>
@@ -231,91 +231,95 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Ours Recon Piano</label>
-                <audio controls preload="none" src="audio/swan-piano-recon.mp3">
+                <audio controls preload="none" src="audio/swan/swan-piano-recon.mp3">
             </div>
             <div class="audio-item">
                 <label>Ours Recon Violin</label>
-                <audio controls preload="none" src="audio/swan-violin-recon.mp3">
+                <audio controls preload="none" src="audio/swan/swan-violin-recon.mp3">
             </div>
         </div>
     </div>
 </div>
 
-<!-- Template for adding more samples
+<!-- ========== Sample 2: lacampanella ========== -->
 <div class="sample-block">
-    <div class="sample-title">Sample: XXX</div>
+    <div class="sample-title">Sample: la campanella</div>
 
+    <!-- Row 1: Mixture -->
     <div class="audio-row">
         <div class="row-title">Mixture</div>
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Mixture</label>
-                <audio controls preload="none" src="audio/xxx-mixture-gt.mp3">
+                <audio controls preload="none" src="audio/lacampanella/lacampanella-mixture-gt.mp3">
             </div>
             <div></div>
         </div>
     </div>
 
+    <!-- Row 2: Ground Truth -->
     <div class="audio-row">
         <div class="row-title">Ground Truth</div>
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Piano GT</label>
-                <audio controls preload="none" src="audio/xxx-piano-gt.mp3">
+                <audio controls preload="none" src="audio/lacampanella/lacampanella-piano-gt.mp3">
             </div>
             <div class="audio-item">
                 <label>Violin GT</label>
-                <audio controls preload="none" src="audio/xxx-violin-gt.mp3">
+                <audio controls preload="none" src="audio/lacampanella/lacampanella-violin-gt.mp3">
             </div>
         </div>
     </div>
 
+    <!-- Row3: NMF -->
     <div class="audio-row">
         <div class="row-title">NMF (Unsupervised Matrix Factorization Baseline)</div>
         <p class="row-note">Classic unsupervised source separation baseline based on non-negative matrix factorization.</p>
         <div class="audio-grid">
             <div class="audio-item">
                 <label>NMF Piano</label>
-                <audio controls preload="none" src="audio/xxx-piano-nmf.mp3">
+                <audio controls preload="none" src="audio/lacampanella/lacampanella-piano-nmf.mp3">
             </div>
             <div class="audio-item">
                 <label>NMF Violin</label>
-                <audio controls preload="none" src="audio/xxx-violin-nmf.mp3">
+                <audio controls preload="none" src="audio/lacampanella/lacampanella-violin-nmf.mp3">
             </div>
         </div>
     </div>
 
+    <!-- Row4: SCNet -->
     <div class="audio-row">
         <div class="row-title">SCNet (Supervised Separation)</div>
         <p class="row-note">Results trained only on the provided dataset for 1000 epochs. Since the source instruments of training and test data differ greatly in timbre and phase, single-channel was used for both training and inference.</p>
         <div class="audio-grid">
             <div class="audio-item">
                 <label>SCNet Piano</label>
-                <audio controls preload="none" src="audio/xxx-piano-sep.mp3">
+                <audio controls preload="none" src="audio/lacampanella/lacampanella-piano-sep.mp3">
             </div>
             <div class="audio-item">
                 <label>SCNet Violin</label>
-                <audio controls preload="none" src="audio/xxx-violin-sep.mp3">
+                <audio controls preload="none" src="audio/lacampanella/lacampanella-violin-sep.mp3">
             </div>
         </div>
     </div>
 
+    <!-- Row5: Ours -->
     <div class="audio-row">
         <div class="row-title">Ours (Self-supervised Reconstruction)</div>
         <p class="row-note">Our self-supervised training does not use original source stems or manually annotated MIDI data.</p>
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Ours Recon Piano</label>
-                <audio controls preload="none" src="audio/xxx-piano-recon.mp3">
+                <audio controls preload="none" src="audio/lacampanella/lacampanella-piano-recon.mp3">
             </div>
             <div class="audio-item">
                 <label>Ours Recon Violin</label>
-                <audio controls preload="none" src="audio/xxx-violin-recon.mp3">
+                <audio controls preload="none" src="audio/lacampanella/lacampanella-violin-recon.mp3">
             </div>
         </div>
     </div>
 </div>
--->
 
 </body>
 </html>
