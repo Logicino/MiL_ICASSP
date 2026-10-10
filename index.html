@@ -63,18 +63,12 @@ h1{
     line-height:1.6;
     text-align:justify;
 }
-.legend{
-    font-size: 14px;
-    color: #4b5563;
-    text-align: center;
-    margin-bottom: 36px;
-}
 .sample-block{
     background:#ffffff;
     border-radius: 16px;
     padding: 24px;
     margin-bottom: 24px;
-    box-shadow: 0 4px 14px rgba(0,0,0.05);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
     border: 1px solid #eef2f7;
     transition: all 0.2s ease;
 }
@@ -167,18 +161,17 @@ Most existing source separation methods rely on end-to-end supervised training. 
     <img class="paper-figure" src="pics/paradigm.png" alt="System Paradigm">
 </div>
 
-
 <!-- Sample: swan -->
 <div class="sample-block">
     <div class="sample-title">Sample: swan</div>
 
-    <!-- Row 1: Mixture，占两格中的一格 -->
+    <!-- Row 1: Mixture -->
     <div class="audio-row">
         <div class="row-title">Mixture</div>
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Mixture</label>
-                <audio controls preload="none" src="audio/swan-mix-gt-c.mp3">
+                <audio controls preload="none" src="audio/swan-mixture-gt.mp3">
             </div>
             <div></div> <!-- empty placeholder to keep grid layout -->
         </div>
@@ -190,11 +183,11 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Piano GT</label>
-                <audio controls preload="none" src="audio/swan-piano-gt-c.mp3">
+                <audio controls preload="none" src="audio/swan-piano-gt.mp3">
             </div>
             <div class="audio-item">
                 <label>Violin GT</label>
-                <audio controls preload="none" src="audio/swan-violin-gt-c.mp3">
+                <audio controls preload="none" src="audio/swan-violin-gt.mp3">
             </div>
         </div>
     </div>
@@ -206,11 +199,11 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>SCNet Piano</label>
-                <audio controls preload="none" src="audio/swan-piano-sep-c.mp3">
+                <audio controls preload="none" src="audio/swan-piano-sep.mp3">
             </div>
             <div class="audio-item">
                 <label>SCNet Violin</label>
-                <audio controls preload="none" src="audio/swan-violin-sep-c.mp3">
+                <audio controls preload="none" src="audio/swan-violin-sep.mp3">
             </div>
         </div>
     </div>
@@ -222,11 +215,11 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Ours Recon Piano</label>
-                <audio controls preload="none" src="audio/swan-piano-recon-c.mp3">
+                <audio controls preload="none" src="audio/swan-piano-recon.mp3">
             </div>
             <div class="audio-item">
                 <label>Ours Recon Violin</label>
-                <audio controls preload="none" src="audio/swan-violin-recon-c.mp3">
+                <audio controls preload="none" src="audio/swan-violin-recon.mp3">
             </div>
         </div>
     </div>
@@ -241,7 +234,7 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Mixture</label>
-                <audio controls preload="none" src="audio/xxx-mix-gt-c.mp3">
+                <audio controls preload="none" src="audio/xxx-mixture-gt.mp3">
             </div>
             <div></div>
         </div>
@@ -252,11 +245,11 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Piano GT</label>
-                <audio controls preload="none" src="audio/xxx-piano-gt-c.mp3">
+                <audio controls preload="none" src="audio/xxx-piano-gt.mp3">
             </div>
             <div class="audio-item">
                 <label>Violin GT</label>
-                <audio controls preload="none" src="audio/xxx-violin-gt-c.mp3">
+                <audio controls preload="none" src="audio/xxx-violin-gt.mp3">
             </div>
         </div>
     </div>
@@ -267,11 +260,11 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>SCNet Piano</label>
-                <audio controls preload="none" src="audio/xxx-piano-sep-c.mp3">
+                <audio controls preload="none" src="audio/xxx-piano-sep.mp3">
             </div>
             <div class="audio-item">
                 <label>SCNet Violin</label>
-                <audio controls preload="none" src="audio/xxx-violin-sep-c.mp3">
+                <audio controls preload="none" src="audio/xxx-violin-sep.mp3">
             </div>
         </div>
     </div>
@@ -282,11 +275,11 @@ Most existing source separation methods rely on end-to-end supervised training. 
         <div class="audio-grid">
             <div class="audio-item">
                 <label>Ours Recon Piano</label>
-                <audio controls preload="none" src="audio/xxx-piano-recon-c.mp3">
+                <audio controls preload="none" src="audio/xxx-piano-recon.mp3">
             </div>
             <div class="audio-item">
                 <label>Ours Recon Violin</label>
-                <audio controls preload="none" src="audio/xxx-violin-recon-c.mp3">
+                <audio controls preload="none" src="audio/xxx-violin-recon.mp3">
             </div>
         </div>
     </div>
