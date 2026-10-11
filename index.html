@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Separation Demo Page</title>
+    <title>MIDI-in-the-Loop (MiL): An Iterative Self-Supervised Analysis-by-Synthesis Piano-Violin Separation Method Using Virtual Instruments</title>
     <style>
         * {
             box-sizing: border-box;
@@ -28,7 +28,14 @@
             text-align: center;
             font-size:17px;
             color:#333;
+            margin-bottom:12px;
+        }
+        .affiliation-line {
+            text-align:center;
+            font-size:15px;
+            color:#444;
             margin-bottom:28px;
+            line-height:1.5;
         }
         .abstract-wrap {
             background: #ffffff;
@@ -40,6 +47,7 @@
         .abstract-wrap h2 {
             font-size: 22px;
             margin-bottom:14px;
+            text-align:center;
         }
         .abstract-wrap p {
             line-height:1.65;
@@ -108,21 +116,26 @@
 </head>
 <body>
     <!-- ========== Paper Header ========== -->
-    <h1>Put Your Full Paper Title Here</h1>
-    <div class="author-line">Author Names | Affiliation | Conference</div>
+    <h1>MIDI-in-the-Loop (MiL): An Iterative Self-Supervised Analysis-by-Synthesis Piano-Violin Separation Method Using Virtual Instruments</h1>
+    <div class="author-line">Yuetonghui Xu¹, Zhixin Yuan², Lanjia Ning³, Xihong Wu², Xiaobing Li³, Feng Yu³, Yue Qin¹</div>
+    <div class="affiliation-line">
+        ¹Nanjing University of Arts, School of Contemporary Music and Technology, Jiangsu, China<br>
+        ²Peking University, School of Intelligence Science and Technology, Beijing, China<br>
+        ³Central Conservatory of Music, Department of Music AI & IT, Beijing, China
+    </div>
 
     <!-- ========== Abstract Section ========== -->
     <div class="abstract-wrap">
         <h2>Abstract</h2>
         <p>
-            Please replace this paragraph with your actual abstract text.
+            Most existing source separation methods rely on end-to-end supervised training. Such schemes lack intermediate representations, limiting downstream applications. Besides, direct waveform-domain predictions may introduce artifacts and require labor-intensive stem annotations. To overcome these, we propose MIDI-in-the-Loop (MiL), a self-supervised MSS method for piano-violin scenarios based on an analysis-by-synthesis framework. Specifically, the analysis stage transcribes the mixture into instrument-specific MIDI sequences, while the synthesis stage renders each MIDI sequence into its corresponding audio source using a virtual instrument. Since virtual instruments are non-differentiable during training process, we further propose a training method utilizing iterative sampling-and-training procedure. To evaluate MiL, we construct a piano-violin dataset and conduct experiments. Results show that MiL achieves performance comparable to supervised benchmarks on certain metrics while substantially outperforming unsupervised matrix-factorization baselines.
         </p>
     </div>
 
-    <!-- ========== Paper Figure (Placed after Abstract as you required) ========== -->
+    <!-- ========== Paper Figure (Placed after Abstract) ========== -->
     <div class="figure-container">
-        <img src="pics/your-figure.png" alt="Method overview figure">
-        <div class="figure-caption">Figure 1: Overview of the proposed framework.</div>
+        <img src="pics/paradigm.png" alt="Method paradigm">
+        <div class="figure-caption">Figure 1: Overview of the proposed MiL framework.</div>
     </div>
 
 
